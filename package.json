@@ -1,0 +1,24 @@
+{
+  "name": "organic-express-mongo-sessions",
+  "version": "0.0.0",
+  "description": "Organelle mounting `connect-mongo` middleware to express app chemical.",
+  "main": "index.js",
+  "dependencies": {
+    "connect-mongo": "~0.4.1",
+    "express-session": "~1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/outbounder/organic-express-mongo-sessions.git"
+  },
+  "author": "Boris Filipov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/outbounder/organic-express-mongo-sessions/issues"
+  },
+  "homepage": "https://github.com/outbounder/organic-express-mongo-sessions"
+}
