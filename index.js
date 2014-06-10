@@ -10,6 +10,9 @@ module.exports = function(plasma, dna) {
       secret: dna.cookie_secret,
       store: sessionStore
     }));
+    plasma.on(dna.closeOn || "kill", function(){
+      sessionStore.db.close()
+    })
     if(dna.emitReady)
       plasma.emit({
         type: dna.emitReady,

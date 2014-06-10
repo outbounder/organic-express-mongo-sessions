@@ -9,7 +9,8 @@ Organelle mounting `connect-mongo` middleware to express app chemical.
       "reactOn": "ExpressServer",
       "emitReady": "ExpressSessions",
       "cookie_secret": "secret",
-      "db": "databaseName"
+      "db": "databaseName",
+      "closeOn": "kill"
     }
 
 ### `reactOn` property
