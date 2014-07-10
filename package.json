@@ -1,6 +1,6 @@
 {
   "name": "organic-express-mongo-sessions",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Organelle mounting `connect-mongo` middleware to express app chemical.",
   "main": "index.js",
   "dependencies": {
