@@ -12,18 +12,21 @@ module.exports = function(plasma, dna) {
           data: sessionStore
         })
     })
+    
     app.use(session(_.extend({
       secret: dna.cookie_secret,
       store: sessionStore,
       saveUninitialized: true,
       resave: true
     }, dna["express-session"])));
-    plasma.on(dna.closeOn || "kill", function(){
-      // workaround to notify express session that its sessionStore has closed db connection.
-      sessionStore.emit("disconnect")
+
+    plasma.on(dna.closeOn || "kill", function(c, next){
       // close db connection
-      sessionStore.db.close()
+      sessionStore.db.close(function(){
+        // workaround to notify express session that its sessionStore has closed db connection.
+        sessionStore.emit("disconnect")
+        next()
+      })
     })
-    
   })
 }
