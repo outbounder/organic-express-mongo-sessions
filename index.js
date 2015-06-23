@@ -1,5 +1,5 @@
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+var Session = require('express-session');
+var MongoStore = require('connect-mongo')(Session);
 var _ = require("underscore")
 
 module.exports = function(plasma, dna) {
@@ -9,16 +9,19 @@ module.exports = function(plasma, dna) {
       if(dna.emitReady)
         plasma.emit({
           type: dna.emitReady,
-          data: sessionStore
+          data: sessionStore,
+          session: session
         })
     })
     
-    app.use(session(_.extend({
+    var session = Session(_.extend({
       secret: dna.cookie_secret,
       store: sessionStore,
       saveUninitialized: true,
       resave: true
-    }, dna["express-session"])));
+    }, dna["express-session"]));
+    
+    app.use(session);
 
     plasma.on(dna.closeOn || "kill", function(c, next){
       // close db connection

@@ -25,5 +25,6 @@ Indicates the type of the chemical to be emitted once middleware is mounted, che
 
     {
       "type": "emitReadyValue",
-      "data": MongoStore instance
+      "data": MongoStore instance,
+      "session": ExpressSession instance
     }
