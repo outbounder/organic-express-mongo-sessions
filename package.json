@@ -1,8 +1,11 @@
 {
   "name": "organic-express-mongo-sessions",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Organelle mounting `connect-mongo` middleware to express app chemical.",
   "main": "index.js",
+  "contributors": [
+    "Georgi Yonchev (https://github.com/multi)"
+  ],
   "dependencies": {
     "connect-mongo": "^0.8.2",
     "express-session": "^1.12.1",

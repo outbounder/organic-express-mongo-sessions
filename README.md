@@ -1,4 +1,4 @@
-# organic-express-mongo-sessions
+# organic-express-mongo-sessions v0.1.2
 
 Organelle mounting `connect-mongo` middleware to express app chemical.
 
